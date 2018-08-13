@@ -86,11 +86,11 @@ private function getRandomCurrency(){
 //#########################################################
 //Generate a single big insertion query
 //#########################################################
-private function generateSQLQuery($total_records){
+private function generateSQLQuery($buffer_size){
 
     $sql="INSERT INTO coupons (coupon_code,coupon_price,currency) VALUES";
 
-    for($i=0;$i<$total_records;$i++){
+    for($i=0;$i<$buffer_size;$i++){ 
         $coupon_code=$this->getUniqueCouponCode();
         $coupon_price=$this->getRandomPrice();
         $currency=$this->getRandomCurrency();
