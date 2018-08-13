@@ -12,7 +12,7 @@
 
 As per requirement the code is generating 10 CRORE records in the mysql database. Following steps has been taken to accomplish the task.
 
-- Added set_time_limit(0), which runs the code for infinite time and will not terminate the code in the middle.
+- Added **set_time_limit(0)**, which runs the code for infinite time and will not terminate the code in the middle.
 - Connected the databases inside the constructor of the class file, which fetches all database connection parameters from the class level properties.
 - Now we are generating a unique coupon codes using the function **getUniqueCouponCode()**, this function is basically generating a coupon code and then it is checking that whether the generated coupon code is unique or not. To check the uniqueness we are the storing the unique code inside an **coupon code array** and then we are searching the coupon code inside the coupon code array, if it is not found then it is a unique code, otherwise it will be rejected and the function **getUniqueCouponCode()** will be called again and the same process goes on.
 - Now we are generating currency value using our function **getRandomCurrency()**, this is randomly picking one currency out of three currencies GBP, USD and AUD.
