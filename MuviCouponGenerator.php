@@ -90,7 +90,7 @@ private function generateSQLQuery($buffer_size){
 
     $sql="INSERT INTO coupons (coupon_code,coupon_price,currency) VALUES";
 
-    for($i=0;$i<$buffer_size;$i++){ 
+    for($i=0;$i<$buffer_size;$i++){
         $coupon_code=$this->getUniqueCouponCode();
         $coupon_price=$this->getRandomPrice();
         $currency=$this->getRandomCurrency();
@@ -108,7 +108,7 @@ private function generateSQLQuery($buffer_size){
 
 public function insertCouponCodes(){
 
-    //Inserting batches, inserting 1 million records in single batch.
+    //Inserting batches, inserting 1000 records in single batch.
     $total_batches=($this->total_coupons)/$this->batch_size;
     for($j=0;$j<$total_batches;$j++){
         $sql = $this->generateSQLquery($this->batch_size);
